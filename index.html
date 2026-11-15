@@ -3,216 +3,1037 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Research portfolio of Rajeshwar Sahu, Integrated M.Sc. Biology student at UM-DAE CEBS, University of Mumbai.">
 <title>Rajeshwar Sahu | Research Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #ffffff;
+  --bg: #f8fafc;
+  --surface: #ffffff;
   --text: #0f172a;
-  --card: #f8fafc;
-  --accent: #1d4ed8;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent2: #0ea5e9;
+  --border: #e2e8f0;
+  --tag: #eff6ff;
+  --shadow: 0 10px 35px rgba(15,23,42,0.05);
 }
 
 .dark {
   --bg: #020617;
+  --surface: #0f172a;
   --text: #e2e8f0;
-  --card: #0f172a;
+  --muted: #94a3b8;
   --accent: #38bdf8;
+  --accent2: #818cf8;
+  --border: #1e293b;
+  --tag: #172554;
+  --shadow: 0 10px 35px rgba(0,0,0,0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: 0.4s;
-  line-height: 1.6;
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: auto;
-  padding: 20px;
+  padding: 0 25px;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 60px 0;
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
 }
 
-h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+.nav-inner {
+  max-width: 1050px;
+  margin: auto;
+  padding: 14px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-.subtitle {
-  color: var(--accent);
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
 }
 
-/* NAV BAR */
-.nav {
-  text-align: center;
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.theme-btn {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 11px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* HERO */
+
+.hero {
+  padding: 105px 0 90px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(37,99,235,0.09), transparent 30%),
+    radial-gradient(circle at 10% 80%, rgba(14,165,233,0.07), transparent 30%);
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.7rem, 7vw, 4.8rem);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 680px;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 21px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* COMMON SECTIONS */
+
+section {
+  padding: 75px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
   margin-bottom: 30px;
 }
 
-.nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: bold;
+.section-intro {
+  color: var(--muted);
+  max-width: 750px;
+  margin-top: -18px;
+  margin-bottom: 30px;
 }
 
 /* CARDS */
+
 .card {
-  background: var(--card);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
   padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  border-left: 4px solid var(--accent);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.4s;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, border-color 0.3s;
 }
 
-.card.show {
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 5px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.meta {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* EDUCATION */
+
+.education-item {
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.education-item h3 {
+  font-size: 1.1rem;
+}
+
+.education-item .institution {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.education-item .year {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* RESEARCH */
+
+.project {
+  position: relative;
+}
+
+.project-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project ul {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.project li {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+}
+
+/* SKILLS */
+
+.skill-group {
+  margin-bottom: 25px;
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skills span {
+  background: var(--tag);
+  color: var(--accent);
+  padding: 7px 13px;
+  border-radius: 6px;
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+/* INTERESTS */
+
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.interest {
+  padding: 12px 17px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ACHIEVEMENTS */
+
+.achievement {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.achievement-icon {
+  font-size: 1.6rem;
+}
+
+/* CONTACT */
+
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 30px;
+}
+
+.contact-item {
+  margin: 15px 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.contact-item strong {
+  color: var(--text);
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-h2 {
-  color: var(--accent);
+/* RESPONSIVE */
+
+@media(max-width: 700px) {
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    gap: 18px;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 75px 0 65px;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }
 
-/* RESEARCH STYLE */
-.paper {
-  margin-bottom: 15px;
-}
-
-.paper-title {
-  font-weight: bold;
-}
-
-/* SKILLS */
-.skills span {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  padding: 6px 10px;
-  margin: 5px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAVIGATION -->
 
-<header>
-  <h1>Rajeshwar Sahu</h1>
-  <p class="subtitle">Integrated M.Sc. Biology | Research-Oriented Student</p>
+<nav>
+  <div class="nav-inner">
+
+    <a href="#" class="logo">RS<span>.</span></a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <button class="theme-btn" id="themeToggle"
+      aria-label="Toggle colour theme">🌙</button>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="container">
+
+    <div class="hero-content reveal">
+
+      <p class="eyebrow">Biology · Research · Computational Science</p>
+
+      <h1>Rajeshwar <span>Sahu.</span></h1>
+
+      <p class="hero-subtitle">
+        Integrated M.Sc. Biology student at UM-DAE Centre for
+        Excellence in Basic Sciences, University of Mumbai.
+        Interested in understanding biological systems through
+        molecular biology, genetics and computational approaches.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#research" class="btn btn-primary">
+          Explore Research →
+        </a>
+
+        <a href="mailto:rajeshwar.sahu@cbs.ac.in"
+           class="btn btn-secondary">
+          Get in Touch
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 </header>
 
-<div class="nav">
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</div>
 
-<div class="card" id="about">
-  <h2>About</h2>
-  <p>
-    I am an Integrated M.Sc. Biology student at UM-DAE CEBS, University of Mumbai,
-    with training in molecular biology, microbiology, and computational data analysis.
-    My research interests lie in genetics, disease mechanisms, and translational biomedical research.
+<main class="container">
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <p class="section-label">Introduction</p>
+  <h2 class="section-title">About Me</h2>
+
+  <div class="reveal">
+
+    <p style="color:var(--muted); max-width:850px;">
+
+      I am an Integrated M.Sc. Biology student at UM-DAE Centre
+      for Excellence in Basic Sciences, University of Mumbai.
+      My academic training encompasses molecular biology,
+      microbiology, cell biology and developmental biology.
+
+      <br><br>
+
+      I have experience in experimental design, PCR-based
+      techniques, microbial assays and quantitative data analysis
+      using Python. My research experience includes studying
+      insect flight mechanics and thermoregulation, developmental
+      responses to temperature, and plant–microbe interactions
+      under salt stress.
+
+      <br><br>
+
+      I am particularly interested in genetics, molecular
+      mechanisms of disease, translational biomedical research
+      and computational approaches to biological problems.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+  <p class="section-label">Academic Background</p>
+  <h2 class="section-title">Education</h2>
+
+  <div class="reveal">
+
+    <div class="education-item">
+
+      <div class="year">2023 – 2028</div>
+
+      <h3>Integrated M.Sc. in Biology</h3>
+
+      <p class="institution">
+        UM-DAE Centre for Excellence in Basic Sciences,
+        University of Mumbai
+      </p>
+
+      <p style="margin-top:8px;">
+        <strong>CGPA:</strong> 7.26 (6th semester)
+      </p>
+
+      <p style="margin-top:8px;">
+        <strong>Relevant Coursework:</strong>
+        Genetics, Molecular Biology, Cell Biology,
+        Microbiology, Biostatistics, Biochemistry,
+        Animal Physiology, Immunology and Biotechnology.
+      </p>
+
+    </div>
+
+
+    <div class="education-item">
+
+      <div class="year">2023</div>
+
+      <h3>Class XII – Higher Secondary</h3>
+
+      <p class="institution">
+        Odisha Adarsha Vidyalaya, Shirsa
+      </p>
+
+      <p style="margin-top:8px;">
+        <strong>Percentage:</strong> 83.4%
+      </p>
+
+      <p>
+        Physics, Chemistry, Biology, Mathematics and English.
+      </p>
+
+    </div>
+
+
+    <div class="education-item">
+
+      <div class="year">2021</div>
+
+      <h3>Class X – Secondary</h3>
+
+      <p class="institution">
+        Modern Public School (MPS), Balasore
+      </p>
+
+      <p style="margin-top:8px;">
+        <strong>Percentage:</strong> 88.8%
+      </p>
+
+      <p>
+        Science, Mathematics, Social Science, English and Hindi.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESEARCH EXPERIENCE -->
+
+<section id="research">
+
+  <p class="section-label">Scientific Work</p>
+  <h2 class="section-title">Research Experience</h2>
+
+  <p class="section-intro">
+    Selected academic and research projects involving
+    experimental biology, quantitative analysis and
+    literature-based investigation.
   </p>
-</div>
 
-<div class="card" id="research">
-  <h2>Research Experience</h2>
 
-  <div class="paper">
-    <div class="paper-title">Flight Mechanics and Thermoregulation in Daphnis nerii (2025)</div>
-    <p>
-      Quantitative analysis of wingbeat dynamics and thoracic temperature correlation using
-      high-speed videography and Python-based computational tools (DeepLabCut, DLTdv).
+  <!-- PROJECT 1 -->
+
+  <div class="card project reveal">
+
+    <div class="project-number">PROJECT 01 · MAY – JULY 2025</div>
+
+    <h3>Flight Mechanics and Thermoregulation in
+      <i>Daphnis nerii</i>
+    </h3>
+
+    <p class="meta">Summer Research Project</p>
+
+    <ul>
+      <li>
+        Quantitatively analyzed wingbeat frequency and
+        stroke amplitude during warm-up and sustained
+        flight using high-speed videography.
+      </li>
+
+      <li>
+        Investigated the relationship between thoracic
+        temperature dynamics and flight kinematics
+        through computational analysis.
+      </li>
+
+      <li>
+        Utilized DLTdv and DeepLabCut for motion tracking
+        and Python-based tools for data processing
+        and visualization.
+      </li>
+    </ul>
+
+    <div class="skills" style="margin-top:18px;">
+      <span>High-speed Videography</span>
+      <span>DeepLabCut</span>
+      <span>DLTdv</span>
+      <span>Python</span>
+      <span>Data Analysis</span>
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT 2 -->
+
+  <div class="card project reveal">
+
+    <div class="project-number">PROJECT 02 · NOVEMBER 2023</div>
+
+    <h3>Effect of Temperature on
+      <i>Drosophila</i> Egg Development
+    </h3>
+
+    <p class="meta">NIUS Camp Project</p>
+
+    <ul>
+      <li>
+        Investigated temperature-dependent variation
+        in developmental rate under controlled
+        laboratory conditions.
+      </li>
+
+      <li>
+        Designed an experimental workflow and
+        recorded phenotypic data for statistical
+        comparison.
+      </li>
+    </ul>
+
+    <div class="skills" style="margin-top:18px;">
+      <span>Developmental Biology</span>
+      <span>Experimental Design</span>
+      <span>Phenotypic Analysis</span>
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT 3 -->
+
+  <div class="card project reveal">
+
+    <div class="project-number">PROJECT 03 · JANUARY – MAY 2026</div>
+
+    <h3>Biocontrol Allies: Strengthening Host Plants
+      Against Salt Stress
+    </h3>
+
+    <p class="meta">Course Curriculum Reading Project</p>
+
+    <ul>
+      <li>
+        Conducted a literature-based investigation of
+        plant growth-promoting bacteria (PGPB) and
+        microbial biocontrol agents, including
+        <i>Bacillus</i>, <i>Pseudomonas</i> and
+        <i>Geobacillus</i>, in mitigating salinity-induced
+        stress in plants.
+      </li>
+
+      <li>
+        Explored molecular and physiological mechanisms
+        of salt-stress tolerance, focusing on Na+/K+
+        homeostasis, ROS scavenging, osmotic adjustment,
+        antioxidant responses and phytohormone-mediated
+        signalling.
+      </li>
+
+      <li>
+        Evaluated plant–microbe interactions and
+        microbiome-mediated stress adaptation, including
+        the effects of beneficial microbial inoculation
+        on plant growth, disease resistance and host
+        proteomic responses.
+      </li>
+    </ul>
+
+    <div class="skills" style="margin-top:18px;">
+      <span>Plant Molecular Biology</span>
+      <span>Microbial Biocontrol</span>
+      <span>Plant–Microbe Interactions</span>
+      <span>Stress Physiology</span>
+      <span>Literature Review</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TECHNICAL SKILLS -->
+
+<section id="skills">
+
+  <p class="section-label">Laboratory & Computational Expertise</p>
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="reveal">
+
+    <div class="skill-group">
+      <h3>Molecular Biology</h3>
+      <div class="skills">
+        <span>DNA Extraction</span>
+        <span>PCR</span>
+        <span>Agarose Gel Electrophoresis</span>
+        <span>RAPD</span>
+        <span>RFLP</span>
+        <span>Blotting</span>
+      </div>
+    </div>
+
+
+    <div class="skill-group">
+      <h3>Microbiology</h3>
+      <div class="skills">
+        <span>Microbial Culturing</span>
+        <span>Antibiotic Sensitivity Assays</span>
+        <span>Cloning</span>
+      </div>
+    </div>
+
+
+    <div class="skill-group">
+      <h3>Cell Biology</h3>
+      <div class="skills">
+        <span>Bright-field Microscopy</span>
+        <span>Sample Preparation</span>
+        <span>Staining</span>
+      </div>
+    </div>
+
+
+    <div class="skill-group">
+      <h3>Developmental Biology</h3>
+      <div class="skills">
+        <span>Zebrafish</span>
+        <span>Hydra</span>
+        <span>Chicken Embryo</span>
+      </div>
+    </div>
+
+
+    <div class="skill-group">
+      <h3>Computational & Data Analysis</h3>
+      <div class="skills">
+        <span>Python</span>
+        <span>NumPy</span>
+        <span>Pandas</span>
+        <span>Matplotlib</span>
+        <span>MS Excel</span>
+        <span>LaTeX</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESEARCH INTERESTS -->
+
+<section id="interests">
+
+  <p class="section-label">Future Directions</p>
+  <h2 class="section-title">Research Interests</h2>
+
+  <p class="section-intro">
+    Areas of biology and interdisciplinary research
+    that I am interested in exploring further.
+  </p>
+
+  <div class="interests reveal">
+
+    <div class="interest">Genetics</div>
+    <div class="interest">Molecular Biology</div>
+    <div class="interest">Biomedical Research</div>
+    <div class="interest">Vaccine Development</div>
+    <div class="interest">Bioinformatics</div>
+    <div class="interest">Computational Biology</div>
+    <div class="interest">Developmental Biology</div>
+    <div class="interest">DNA Sequencing (NGS)</div>
+
+  </div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS AND LEADERSHIP -->
+
+<section id="achievements">
+
+  <p class="section-label">Recognition & Responsibilities</p>
+  <h2 class="section-title">Achievements & Leadership</h2>
+
+  <div class="card reveal">
+
+    <div class="achievement">
+
+      <div class="achievement-icon">🏅</div>
+
+      <div>
+        <h3>National Initiative on Undergraduate Science (NIUS)</h3>
+
+        <p>
+          Selected for NIUS, Batch 19 (2024).
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card reveal">
+
+    <div class="achievement">
+
+      <div class="achievement-icon">⚡</div>
+
+      <div>
+        <h3>Sports Secretary</h3>
+
+        <p>
+          UM-DAE Centre for Excellence in Basic Sciences
+          <br>
+          2025 – 2026
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <p class="section-label">Connect</p>
+  <h2 class="section-title">Contact Me</h2>
+
+  <div class="contact-box reveal">
+
+    <p style="color:var(--muted);">
+      I am interested in research opportunities,
+      academic collaborations and discussions
+      related to molecular biology, genetics
+      and biomedical sciences.
     </p>
+
+    <div class="contact-item">
+      <strong>Email (Institutional):</strong>
+      <a href="mailto:rajeshwar.sahu@cbs.ac.in">
+        rajeshwar.sahu@cbs.ac.in
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <strong>Email (Personal):</strong>
+      <a href="mailto:2005.rajeshwar@gmail.com">
+        2005.rajeshwar@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <strong>Phone:</strong>
+      <a href="tel:+919692822235">
+        +91 9692822235
+      </a>
+    </div>
+
+    <div class="hero-buttons">
+
+      <a href="mailto:rajeshwar.sahu@cbs.ac.in"
+         class="btn btn-primary">
+        Send an Email →
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="paper">
-    <div class="paper-title">Temperature Effects on Drosophila Development (2023)</div>
-    <p>
-      Designed controlled experiments to analyze developmental variation under temperature changes,
-      followed by statistical analysis of phenotypic outcomes.
-    </p>
-  </div>
+</section>
 
-</div>
+</main>
 
-<div class="card" id="skills">
-  <h2>Technical Skills</h2>
 
-  <p><b>Molecular Biology:</b></p>
-  <div class="skills">
-    <span>PCR</span>
-    <span>DNA Extraction</span>
-    <span>Gel Electrophoresis</span>
-  </div>
-
-  <p><b>Computational:</b></p>
-  <div class="skills">
-    <span>Python</span>
-    <span>NumPy</span>
-    <span>Pandas</span>
-    <span>Matplotlib</span>
-  </div>
-
-</div>
-
-<div class="card">
-  <h2>Achievements</h2>
-  <p>Selected for NIUS (Batch 19, 2024)</p>
-</div>
-
-<div class="card" id="contact">
-  <h2>Contact</h2>
-  <p>Email: rajeshwar.sahu@cbs.ac.in</p>
-  <p>Email: 2005.rajeshwar@gmail.com</p>
-</div>
+<!-- FOOTER -->
 
 <footer>
-  © 2026 Rajeshwar Sahu
+  <p>© 2026 Rajeshwar Sahu</p>
+  <p>Research Portfolio · Biology · Computational Science</p>
 </footer>
 
-</div>
 
 <script>
-// Auto theme
+
+// AUTOMATIC THEME BASED ON TIME
+
 const hour = new Date().getHours();
+
 if (hour < 7 || hour >= 19) {
   document.body.classList.add("dark");
 }
 
-// Scroll animation
-const cards = document.querySelectorAll(".card");
-window.addEventListener("scroll", () => {
-  cards.forEach(card => {
-    if (card.getBoundingClientRect().top < window.innerHeight - 50) {
-      card.classList.add("show");
-    }
-  });
+
+// MANUAL THEME SWITCHING
+
+const themeToggle = document.getElementById("themeToggle");
+
+function updateThemeIcon() {
+  themeToggle.textContent =
+    document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+updateThemeIcon();
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  updateThemeIcon();
 });
+
+
+// SCROLL REVEAL ANIMATIONS
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
 </script>
 
 </body>
